@@ -1,0 +1,23 @@
+{
+  "name": "flow-project",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjq123-zjq/flow-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zjq123-zjq/flow-project/issues"
+  },
+  "homepage": "https://github.com/zjq123-zjq/flow-project#readme",
+  "dependencies": {
+    "pinia-plugin-persistedstate": "^3.2.0",
+    "uni-app-fetch": "^0.0.3"
+  }
+}
