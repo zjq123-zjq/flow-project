@@ -15,4 +15,6 @@ export default {
 <style>
 /*每个页面公共css */
 @import '@/common/iconfont/iconfont.scss';
+
+@import '@/common/css/commom.scss';
 </style>

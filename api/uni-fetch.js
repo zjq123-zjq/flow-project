@@ -8,6 +8,11 @@ import {
 import {
   useUserStore
 } from '@/stores/user.js'
+import {
+  login
+} from './user'
+
+const tabBarPagePaths = ['pages/task/index', 'pages/message/index', 'pages/my/index']
 
 //创建实例
 const uniFetch = createUniFetch({
@@ -36,6 +41,13 @@ const uniFetch = createUniFetch({
       }
       if (result.statusCode === 401) {
         //token过期处理
+        const pageStack = getCurrentPages()
+        const redirectURL = pageStack[pageStack.length - 1].route
+        const routeType = tabBarPagePaths.includes(redirectURL) ? 'switchTab' : 'redirectTo'
+
+        return uni.redirectTo({
+          url: `/pages/login/index?routeType=${routeType}&redirectURL=/${redirectURL}`,
+        })
       }
       uni.utils.toast(result.data.msg || '请求失败')
     },

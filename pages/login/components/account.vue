@@ -2,12 +2,24 @@
 import { ref } from 'vue';
 import { login } from '@/api/user.js';
 import { useUserStore } from '@/stores/user.js';
+import { onLoad } from '@dcloudio/uni-app';
+
 const store = useUserStore();
 const accountForm = ref();
 
 const formData = ref({
   account: '',
   password: ''
+});
+
+//回调地址
+const redirectURL = ref('');
+//跳转方式
+const routeType = ref('');
+
+onLoad((e) => {
+  redirectURL.value = e.redirectURL;
+  routeType.value = e.routeType;
 });
 
 const accountRules = ref({
@@ -42,7 +54,10 @@ const onFormSubmit = async () => {
     const formData = await accountForm.value.validate();
     const res = await login(formData);
     console.log(res);
-    store.token = res.data;
+    if (res.data) store.token = res.data;
+    uni[routeType.value]({
+      url: redirectURL.value
+    });
   } catch (e) {
     console.log(e);
   }

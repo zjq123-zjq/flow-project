@@ -25,34 +25,69 @@
   },
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
+      "path": "pages/task/index",
+      "style": {
+        "navigationBarTitleText": "任务",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/login/index",
       "style": {
         "navigationBarTitleText": "神领快递",
         "enablePullDownRefresh": false
       }
     },
-    {
-      "path": "pages/task/index",
-      "style": {
-        "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
-      }
-    },
+
     {
       "path": "pages/message/index",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "消息",
         "enablePullDownRefresh": false
       }
     },
     {
       "path": "pages/my/index",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     }
   ],
+  "subPackages": [{
+      "root": "subpkg_user",
+      "pages": [{
+          "path": "truck/index",
+          "style": {
+            "navigationBarTitleText": "车辆信息"
+          }
+        },
+        {
+          "path": "task/index",
+          "style": {
+            "navigationBarTitleText": "任务数据"
+          }
+        },
+        {
+          "path": "settings/index",
+          "style": {
+            "navigationBarTitleText": "系统设置"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpkg_message",
+      "pages": [{
+        "path": "content/index",
+        "style": {
+          "navigationBarTitleText": "详情"
+        }
+      }]
+    }
+  ],
+
+
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "神领物流",
