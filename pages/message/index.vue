@@ -8,8 +8,8 @@ const tabIndex = ref(0);
 
 //tab数据
 const tabMetas = ref([
-  { title: '公告', rendered: true },
-  { title: '任务通知', rendered: false }
+  { title: '任务通知', rendered: true },
+  { title: '公告', rendered: false }
 ]);
 
 //监听tab切换
@@ -27,12 +27,12 @@ const changeTab = (index) => {
       </view>
     </view>
     <view class="message-list" v-show="tabIndex === 0" v-if="tabMetas[0].rendered">
-      <!-- 公告组件 -->
-      <Announce></Announce>
-    </view>
-    <view class="message-list" v-show="tabIndex === 1" v-if="tabMetas[1].rendered">
       <!-- 任务通知组件 -->
       <Notify></Notify>
+    </view>
+    <view class="message-list" v-show="tabIndex === 1" v-if="tabMetas[1].rendered">
+      <!-- 公告组件 -->
+      <Announce></Announce>
     </view>
   </view>
 </template>

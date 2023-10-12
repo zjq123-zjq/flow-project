@@ -4,7 +4,7 @@
 import uniFetch from './uni-fetch.js'
 
 //分页查询消息列表
-export const getMessage = (contentType, page, pageSize) => {
+export const getMessage = (contentType, page = 1, pageSize = 5) => {
   return uniFetch.get('/driver/messages/page', {
     contentType,
     page,

@@ -27,7 +27,7 @@
     {
       "path": "pages/task/index",
       "style": {
-        "navigationBarTitleText": "任务",
+        "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     },
@@ -84,9 +84,48 @@
           "navigationBarTitleText": "详情"
         }
       }]
+    },
+    {
+      "root": "subpkg_task",
+      "pages": [{
+          "path": "pickup/index",
+          "style": {
+            "navigationBarTitleText": "提货信息"
+          }
+        },
+        {
+          "path": "detail/index",
+          "style": {
+            "navigationBarTitleText": "任务详情"
+          }
+        },
+        {
+          "path": "delay/index",
+          "style": {
+            "navigationBarTitleText": "延迟提货"
+          }
+        },
+        {
+          "path": "delivery/index",
+          "style": {
+            "navigationBarTitleText": "支付信息"
+          }
+        },
+        {
+          "path": "except/index",
+          "style": {
+            "navigationBarTitleText": "异常上报"
+          }
+        },
+        {
+          "path": "record/index",
+          "style": {
+            "navigationBarTitleText": "回车登记"
+          }
+        }
+      ]
     }
   ],
-
 
   "globalStyle": {
     "navigationBarTextStyle": "black",
